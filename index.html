@@ -4,6 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Rock Paper Scissors</title>
+  <meta name="description" content="Play rock paper scissors against the computer. Pick a match length and win the match.">
+  <meta name="theme-color" content="#0b0b0c">
+  <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
@@ -31,9 +34,9 @@
       <p class="sub">Pick a move. The computer picks one too.</p>
 
       <div class="modes">
-        <span class="mode" data-wins="2" onclick="setMode(this)">Best of 3</span>
-        <span class="mode active" data-wins="3" onclick="setMode(this)">Best of 5</span>
-        <span class="mode" data-wins="5" onclick="setMode(this)">Best of 9</span>
+        <button class="mode" data-wins="2" onclick="setMode(this)">Best of 3</button>
+        <button class="mode active" data-wins="3" onclick="setMode(this)">Best of 5</button>
+        <button class="mode" data-wins="5" onclick="setMode(this)">Best of 9</button>
       </div>
 
       <div class="scores">
@@ -57,15 +60,15 @@
       <p id="message">Choose your move</p>
 
       <div class="choices">
-        <button class="choice" id="btnRock" onclick="play('rock')">
+        <button class="choice" onclick="play('rock')">
           <span class="icon" id="iconRock"></span>
           Rock <small>(R)</small>
         </button>
-        <button class="choice" id="btnPaper" onclick="play('paper')">
+        <button class="choice" onclick="play('paper')">
           <span class="icon" id="iconPaper"></span>
           Paper <small>(P)</small>
         </button>
-        <button class="choice" id="btnScissors" onclick="play('scissors')">
+        <button class="choice" onclick="play('scissors')">
           <span class="icon" id="iconScissors"></span>
           Scissors <small>(S)</small>
         </button>
@@ -80,7 +83,7 @@
       <div class="tray">
         <div class="chalk c1"></div>
         <div class="chalk c2"></div>
-        <div class="eraser" onclick="wipeBoard()" title="wipe the board"></div>
+        <button class="eraser" onclick="wipeBoard()" title="wipe the board" aria-label="wipe the board"></button>
       </div>
 
     </div>
