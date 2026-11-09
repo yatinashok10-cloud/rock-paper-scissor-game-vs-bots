@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rock Paper Scissors</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="sticky" id="sticky">good luck :)</div>
+
+  <div class="frame">
+    <div class="board">
+
+      <div class="intro" id="intro">
+        <div class="card">
+          <h2>Rock Paper Scissors</h2>
+          <p id="introText">Pick a match length and try to beat the computer.</p>
+          <p class="ask" id="askText">Would you like to play?</p>
+          <button class="btn yes" onclick="startGame()">Yes, let's play!</button>
+          <button class="btn no" id="noBtn" onclick="notNow()">Not now</button>
+          <div class="credit">Created by Yatin</div>
+        </div>
+      </div>
+
+      <h1>Rock, Paper, Scissors</h1>
+      <p class="sub">Pick a move. The computer picks one too.</p>
+
+      <div class="modes">
+        <span class="mode" data-wins="2" onclick="setMode(this)">Best of 3</span>
+        <span class="mode active" data-wins="3" onclick="setMode(this)">Best of 5</span>
+        <span class="mode" data-wins="5" onclick="setMode(this)">Best of 9</span>
+      </div>
+
+      <div class="scores">
+        <div class="side">
+          <h3>You</h3>
+          <div class="tally" id="playerTally"></div>
+        </div>
+        <div class="side">
+          <h3>Computer</h3>
+          <div class="tally" id="compTally"></div>
+        </div>
+      </div>
+      <div class="tieline">Ties: <span id="ties">0</span></div>
+
+      <div class="arena">
+        <div class="slot" id="playerSlot"><span class="q">?</span></div>
+        <div class="vs">vs</div>
+        <div class="slot" id="compSlot"><span class="q">?</span></div>
+      </div>
+
+      <p id="message">Choose your move</p>
+
+      <div class="choices">
+        <button class="choice" id="btnRock" onclick="play('rock')">
+          <span class="icon" id="iconRock"></span>
+          Rock <small>(R)</small>
+        </button>
+        <button class="choice" id="btnPaper" onclick="play('paper')">
+          <span class="icon" id="iconPaper"></span>
+          Paper <small>(P)</small>
+        </button>
+        <button class="choice" id="btnScissors" onclick="play('scissors')">
+          <span class="icon" id="iconScissors"></span>
+          Scissors <small>(S)</small>
+        </button>
+      </div>
+
+      <div class="rounds" id="rounds"></div>
+
+      <div class="againRow" id="againRow">
+        <button class="btn yes" onclick="wipeBoard()">Play again</button>
+      </div>
+
+      <div class="tray">
+        <div class="chalk c1"></div>
+        <div class="chalk c2"></div>
+        <div class="eraser" onclick="wipeBoard()" title="wipe the board"></div>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
